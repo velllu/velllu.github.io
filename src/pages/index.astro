@@ -1,0 +1,53 @@
+---
+import Page from "../layouts/Page.astro";
+---
+
+<style lang="sass">
+	#subtitle
+		margin-top: -1.3rem
+</style>
+
+<Page>
+	<h1>Vellu's blog!</h1>
+
+	<h2 id="subtitle"></h2>
+	<noscript>
+		<h2>someone here is too paranoid to enable js! I respect that</h2>
+	</noscript>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore culpa at
+		reprehenderit. Facilis laborum illum culpa dicta voluptate nisi sed quas
+		reiciendis? Illo, optio assumenda eaque nobis ullam sapiente sit? Error
+		eos maiores saepe qui dolorem, necessitatibus ipsa velit quis similique
+		consectetur ad asperiores optio itaque assumenda perspiciatis
+		voluptatem. Similique nemo maxime amet, repudiandae quis fugiat sed
+		soluta veritatis voluptas! Facere, vitae nemo laudantium aliquam quidem
+		hic quod autem, doloremque, et repellendus modi molestiae? Quia labore
+		quos qui ea odit! Assumenda vitae et nihil neque dolores ullam sint quia
+		suscipit. Repellat delectus aliquid saepe nulla. Officia ullam in
+		inventore reiciendis fugiat vero voluptatum cupiditate quis earum
+		voluptatem blanditiis quam sit eos, necessitatibus et. Molestiae, magni
+		commodi autem voluptate minima iste? Facere quibusdam qui deleniti
+		cumque, voluptas reprehenderit error omnis, magni neque doloribus
+		veritatis natus ipsa autem optio nulla, odio suscipit tempora. Tempora
+		nesciunt totam beatae, labore amet laborum illo magni!
+	</p>
+
+	<button>Test</button>
+	<a href="#"><p>Link here</p></a>
+
+	<script lang="ts">
+		const random_text = [
+			"everyone's favorite rust programmer",
+			"*minecraft like splashscreen*",
+			".unwrap().unwrap()",
+			"server side rendering is way too expensive",
+			"cookie free",
+			"iosevka is the best font",
+		];
+
+		document.getElementById("subtitle").innerText =
+			random_text[Math.floor(Math.random() * random_text.length)];
+	</script>
+</Page>

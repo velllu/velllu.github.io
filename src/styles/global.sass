@@ -1,0 +1,96 @@
+$background-color: #1f0b15
+$foreground_color: #eeb5c5
+$foreground_brighter_color: #f1cbd6
+$primary_color: #a12857
+
+$animation-duration: 0.3s
+
+$border-radius: 10px
+$padding: 10px
+
+$phone_width: 750px
+$tablet_width: 1000px
+
+body
+    padding: 0
+    margin: 0
+
+/// Fonts ///
+p, h1, h2, h3, h4, h5, h6, button
+    font-family: 'Iosevka Web'
+
+@font-face
+    font-family: 'Iosevka Web'
+    font-display: swap
+    font-weight: 400
+    font-stretch: normal
+    font-style: normal
+    src: url('/fonts/iosevka-regular.woff2') format('truetype'), url('woff2/iosevka-regular.woff2') format('woff2')
+
+/// Responsive ///
+@media (max-width: $phone_width)
+    p, h4, h5, h6, button
+        font-size: 1.2rem
+
+@media (min-width: $phone_width)
+    p, h4, h5, h6, button
+        backdrop
+        font-size: 1.2rem
+
+main
+    margin-left: 2rem
+    margin-right: 2rem
+
+@media (min-width: $phone_width)
+    main
+        margin-left: 10%
+        margin-right: 10%
+
+@media (min-width: $tablet_width)
+    main
+        margin-left: 20%
+        margin-right: 20%
+
+/// Sizing ///
+button
+    font-size: 1rem
+
+/// Colors ////
+body
+    color: $foreground_color
+    background-color: $background-color
+
+p, h2, h3, h4, h5, h6
+    color: $foreground_color
+
+h1
+    color: $foreground_brighter_color
+
+/// Actual styling ///
+button
+    background-color: $foreground_brighter_color
+
+    padding: $padding calc($padding * 2)
+
+    border-radius: $border-radius
+    border: none
+    cursor: pointer
+
+    transition: background-color $animation-duration, box-shadow $animation-duration, transform $animation-duration
+    &:hover, &:focus
+        background-color: $primary_color
+        box-shadow: darken($background-color, 10%) 0px 0px 15px 3px
+        transform: scale(1.1)
+
+        outline: none
+
+p
+    text-align: justify
+    hyphens: auto
+
+a
+    text-decoration-color: $primary_color
+    text-decoration-thickness: 0.2rem
+
+    &:visited
+        text-decoration-color: darken($primary_color, 20%)
