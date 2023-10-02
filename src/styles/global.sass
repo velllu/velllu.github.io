@@ -1,21 +1,12 @@
-$background-color: #181818
-$foreground_color: #bebebe
-$primary_color: #dd174f
-
-$animation-duration: 0.3s
-
-$border-radius: 10px
-$padding: 10px
-
-$phone_width: 750px
-$tablet_width: 1000px
+@import "variables"
 
 body
     padding: 0
     margin: 0
+    margin-top: calc($navbar-height * 1.5)
 
 /// Fonts ///
-p, h1, h2, h3, h4, h5, h6, button
+p, h1, h2, h3, h4, h5, h6, button, li
     font-family: 'Iosevka Web'
 
 @font-face
@@ -27,24 +18,28 @@ p, h1, h2, h3, h4, h5, h6, button
     src: url('/fonts/iosevka-regular.woff2') format('truetype'), url('woff2/iosevka-regular.woff2') format('woff2')
 
 /// Responsive ///
-@media (max-width: $phone_width)
+@media (max-width: $phone-width)
     p, h4, h5, h6, button
         font-size: 1.2rem
 
-@media (min-width: $phone_width)
+@media (min-width: $phone-width)
     p, h4, h5, h6, button
         font-size: 1.2rem
+
+@media (max-width: $navbar-mobile-width-threshold)
+    body
+        margin-top: calc($navbar-height-mobile * 1.2)
 
 main
     margin-left: 2rem
     margin-right: 2rem
 
-@media (min-width: $phone_width)
+@media (min-width: $phone-width)
     main
         margin-left: 10%
         margin-right: 10%
 
-@media (min-width: $tablet_width)
+@media (min-width: $tablet-width)
     main
         margin-left: 20%
         margin-right: 20%
@@ -55,18 +50,18 @@ button
 
 /// Colors ////
 body
-    color: $foreground_color
+    color: $foreground-color
     background-color: $background-color
 
-p, h2, h3, h4, h5, h6, a
-    color: $foreground_color
+p, h2, h3, h4, h5, h6, a, li
+    color: $foreground-color
 
 h1
-    color: $primary_color
+    color: $primary-color
 
 /// Actual styling ///
 button
-    background-color: $primary_color
+    background-color: $primary-color
     color: $background-color
 
     padding: $padding calc($padding * 2)
@@ -77,8 +72,8 @@ button
 
     transition: background-color $animation-duration, box-shadow $animation-duration, transform $animation-duration
     &:hover, &:focus
-        background-color: $primary_color
-        box-shadow: darken($background-color, 10%) 0px 0px 15px 3px
+        background-color: $primary-color
+        box-shadow: $box-shadow-color 0px 0px 15px 3px
         transform: scale(1.1)
 
         outline: none
@@ -88,20 +83,13 @@ p
     hyphens: auto
 
 a
-    text-decoration-color: $primary_color
+    text-decoration-color: $primary-color
     text-decoration-thickness: 0.2rem
-    text-decoration-style: dashed
 
     transition: color $animation-duration
 
     &:visited
-        text-decoration-color: darken($primary_color, 20%)
+        text-decoration-color: darken($primary-color, 20%)
 
     &:hover, &:focus
-        color: $primary_color
-
-    // &:visited
-    //     text-decoration-color: darken($primary_color, 20%)
-
-    // &:hover
-    //     color: red
+        color: $primary-color
